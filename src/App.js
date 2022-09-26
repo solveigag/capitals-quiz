@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { useState } from "react";
+import ExpandWelcome from "./components/expandables/ExpandWelcome"
+import ExpandQuestions from "./components/expandables/ExpandQuestions"
+import Welcome from "./components/Welcome";
+import Quiz from "./components/Quiz";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [userInfo, setUserInfo] = useState({
+    quizStarted: false,
+    level: 1,
+    question: 0,
+    totalScore: 0,
+    totalQuestions: 0
+  });
+
+
+  return ( 
+    <div>
+      <ExpandWelcome userInfo={userInfo}>
+        <Welcome setUserInfo={setUserInfo}/>
+      </ExpandWelcome>
+      <ExpandQuestions userInfo={userInfo}>
+        <Quiz userInfo={userInfo} setUserInfo={setUserInfo}/>
+      </ExpandQuestions>
     </div>
   );
 }
