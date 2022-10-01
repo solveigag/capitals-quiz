@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {data} from "../data/data"
 
 import ScoreCard from "./ScoreCard"
@@ -9,8 +9,18 @@ const QuestionsCard = ({userInfo, setUserInfo}) => {
     const [questions, setQuestions] = useState(data[`level${userInfo.level}`]);
     const [questionIndex, setQuestionIndex] = useState(0);
     
+    useEffect(()=> {
+        console.log("in effect")
+        console.log(userInfo.level, "level in effect")
+        setQuestions(data[`level${userInfo.level}`])
+    }, [userInfo.level])
 
     const handleAnswer = (arg) => {
+        setUserInfo((currUserInfo) => {
+            const updated = {...currUserInfo}
+            updated.totalQuestions++
+            return updated
+        });
         if (arg) {
             setLevelScore((currScore) => {
                 return ++currScore

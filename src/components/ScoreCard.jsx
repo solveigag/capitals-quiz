@@ -21,13 +21,39 @@ const ScoreCard = ({setQuestionIndex, levelScore, userInfo, setUserInfo, setQues
             setLevelScore(0)
             setShowScore(false)
             setQuestionIndex(0)
+        } else {
+
+            
+            setUserInfo((currUserInfo) => {
+                const updated = {...currUserInfo}
+                updated.quizEnded = true
+                return updated
+            })
+            setShowScore(false)
         }
        
    }
+
+   const endQuiz = () => {
+    setUserInfo((currUserInfo) => {
+        const updated = {...currUserInfo}
+            updated.quizEnded = true
+            return updated
+       })
+       setShowScore(false)
+   }
+
+        if (userInfo.level === 3) return <div>
+        <p>Score: {levelScore}</p>
+        <button onClick={endQuiz}>Finish</button>
+        </div>
+
+
     return (<div>
 
         <p>Score: {levelScore}</p>
         <button onClick={nextLevel}>Next Level</button>
+        <button onClick={endQuiz}>Finish</button>
     </div>
     )
 }

@@ -1,8 +1,10 @@
-import { useState } from "react"
-import ExpandQuestionCard from "./expandables/ExpandableQuestionCard"
-import ExpandScore from "./expandables/ExpandScore"
+// import { useState } from "react"
+import ExpandFinalScore from "./expandables/ExpandFinalScore"
+import ExpandQuestionCard from "./expandables/ExpandQuestionCard"
+import FinalScore from "./FinalScore"
+// import ExpandScore from "./expandables/ExpandScore"
 import QuestionsCard from "./QestionsCard"
-import ScoreCard from "./ScoreCard"
+// import ScoreCard from "./ScoreCard"
 
 
 
@@ -18,6 +20,9 @@ const Quiz = ({userInfo, setUserInfo}) => {
             {/* <ExpandScore showScore={showScore}>
                 <ScoreCard levelScore={levelScore}/>
             </ExpandScore> */}
+            <ExpandFinalScore userInfo={userInfo}>
+                <FinalScore userInfo={userInfo}/>
+            </ExpandFinalScore>
         </section>
     )
 }

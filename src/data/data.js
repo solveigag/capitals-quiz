@@ -15,7 +15,7 @@ export const data = {
         { answer: "Talin", isCorrect: false },
         { answer: "Manchester", isCorrect: false },
         { answer: "Paris", isCorrect: false },
-        { answer: "Vilnius", isCorrect: true },
+        { answer: "London", isCorrect: true },
       ],
     },
   ],
@@ -24,7 +24,7 @@ export const data = {
       question: "What is the capital of Level 2 A?",
       answerOptions: [
         { answer: "A", isCorrect: false },
-        { answer: "B", isCorrect: true },
+        { answer: "true", isCorrect: true },
         { answer: "C", isCorrect: false },
         { answer: "D", isCorrect: false },
       ],
@@ -33,7 +33,7 @@ export const data = {
       question: "What is the capital of Level 2 B?",
       answerOptions: [
           { answer: "E", isCorrect: false },
-          { answer: "F", isCorrect: true },
+          { answer: "true", isCorrect: true },
           { answer: "G", isCorrect: false },
           { answer: "H", isCorrect: false },
       ],
@@ -44,7 +44,7 @@ export const data = {
       question: "What is the capital of Level 3 A?",
       answerOptions: [
         { answer: "A", isCorrect: false },
-        { answer: "B", isCorrect: true },
+        { answer: "true", isCorrect: true },
         { answer: "C", isCorrect: false },
         { answer: "D", isCorrect: false },
       ],
@@ -53,7 +53,7 @@ export const data = {
       question: "What is the capital of Level 3 B?",
       answerOptions: [
           { answer: "E", isCorrect: false },
-          { answer: "F", isCorrect: true },
+          { answer: "true", isCorrect: true },
           { answer: "G", isCorrect: false },
           { answer: "H", isCorrect: false },
       ],

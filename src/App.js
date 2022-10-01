@@ -10,6 +10,7 @@ import Quiz from "./components/Quiz";
 function App() {
   const [userInfo, setUserInfo] = useState({
     quizStarted: false,
+    quizEnded: false,
     level: 1,
     question: 0,
     totalScore: 0,
