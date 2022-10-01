@@ -1,14 +1,28 @@
-import {level2} from "../data/level2"
 
-const ScoreCard = ({setQuestionIndex, levelScore, userInfo, setQuestions, setShowScore, setLevelScore}) => {
+import {data} from "../data/data"
+
+const ScoreCard = ({setQuestionIndex, levelScore, userInfo, setUserInfo, setQuestions, setShowScore, setLevelScore}) => {
 
    const nextLevel = () => {
-    if (userInfo.level !== 5) {
-        setQuestions(level2)
-        setShowScore(false)
-        setLevelScore(0)
-        setQuestionIndex(0)
-    }
+    console.log(userInfo.level, "after click")
+       if (userInfo.level !== 5) {
+           setUserInfo((currUserInfo) => {
+            const updated = {...currUserInfo}
+                updated.level++
+                console.log(userInfo.level, "update")
+                return updated
+           })
+           console.log(userInfo, "in set user")
+            let level = data[`level${userInfo.level}`]
+            console.log(level)
+            console.log(userInfo.level, "before st questions")
+            setQuestions(level)
+            console.log(userInfo.level, "after st questions")
+            setLevelScore(0)
+            setShowScore(false)
+            setQuestionIndex(0)
+        }
+       
    }
     return (<div>
 

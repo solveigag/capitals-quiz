@@ -1,13 +1,14 @@
 import { useState } from "react"
-import {level1} from "../data/level1"
+import {data} from "../data/data"
 
 import ScoreCard from "./ScoreCard"
 
 const QuestionsCard = ({userInfo, setUserInfo}) => {
     const [levelScore, setLevelScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
-    const [questions, setQuestions] = useState(level1);
+    const [questions, setQuestions] = useState(data[`level${userInfo.level}`]);
     const [questionIndex, setQuestionIndex] = useState(0);
+    
 
     const handleAnswer = (arg) => {
         if (arg) {
@@ -29,7 +30,7 @@ const QuestionsCard = ({userInfo, setUserInfo}) => {
         }
     }
     
-if (showScore) return <ScoreCard setQuestionIndex={setQuestionIndex} setShowScore={setShowScore} setLevelScore={setLevelScore} userInfo={userInfo} levelScore={levelScore} setQuestions={setQuestions}/>
+if (showScore) return <ScoreCard setQuestionIndex={setQuestionIndex} setShowScore={setShowScore} setLevelScore={setLevelScore} userInfo={userInfo} setUserInfo={setUserInfo} levelScore={levelScore} setQuestions={setQuestions}/>
     
     return (
         <div>
