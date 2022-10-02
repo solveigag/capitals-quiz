@@ -1,5 +1,5 @@
-const ExpandScore = ({children, showScore}) => {
-    return <div>{showScore === true ? children : null}</div>
-}
+// const ExpandScore = ({children, showScore}) => {
+//     return <div>{showScore === true ? children : null}</div>
+// }
 
-export default ExpandScore
+// export default ExpandScore

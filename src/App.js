@@ -1,9 +1,7 @@
 import "./App.css";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import { useState } from "react";
-import ExpandWelcome from "./components/expandables/ExpandWelcome"
-import ExpandQuestions from "./components/expandables/ExpandQuestions"
+import ExpandWelcome from "./components/expandables/ExpandWelcome";
+import ExpandQuiz from "./components/expandables/ExpandQuiz";
 import Welcome from "./components/Welcome";
 import Quiz from "./components/Quiz";
 
@@ -12,20 +10,18 @@ function App() {
     quizStarted: false,
     quizEnded: false,
     level: 1,
-    question: 0,
     totalScore: 0,
-    totalQuestions: 0
+    totalQuestions: 0,
   });
 
-
-  return ( 
+  return (
     <div>
       <ExpandWelcome userInfo={userInfo}>
-        <Welcome setUserInfo={setUserInfo}/>
+        <Welcome setUserInfo={setUserInfo} />
       </ExpandWelcome>
-      <ExpandQuestions userInfo={userInfo}>
-        <Quiz userInfo={userInfo} setUserInfo={setUserInfo}/>
-      </ExpandQuestions>
+      <ExpandQuiz userInfo={userInfo}>
+        <Quiz userInfo={userInfo} setUserInfo={setUserInfo} />
+      </ExpandQuiz>
     </div>
   );
 }

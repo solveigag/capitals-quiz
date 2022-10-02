@@ -1,11 +1,10 @@
 const Welcome = ({ setUserInfo }) => {
   const startQuiz = () => {
     setUserInfo((currUserInfo) => {
-      const quizStarted = {...currUserInfo}
-      quizStarted.quizStarted = true
-      return quizStarted
+      const quizStarted = { ...currUserInfo };
+      quizStarted.quizStarted = true;
+      return quizStarted;
     });
-    
   };
 
   return (
