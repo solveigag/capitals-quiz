@@ -1,18 +1,51 @@
 import { useEffect, useState } from "react";
 import { data } from "../data/data";
+
 import ScoreCard from "./ScoreCard";
 
-const QuestionsCard = ({ userInfo, setUserInfo }) => {
+const QuestionsCard = ({
+  userInfo,
+  setUserInfo,
+  time,
+  setTime,
+  showScore,
+  setShowScore,
+}) => {
   const [levelScore, setLevelScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
   const [questions, setQuestions] = useState(data[`level${userInfo.level}`]);
   const [questionIndex, setQuestionIndex] = useState(0);
 
+  let levelTime;
+
+  if (userInfo.level === 1) {
+    levelTime = 20;
+  }
+  if (userInfo.level === 2) {
+    levelTime = 25;
+  }
+  if (userInfo.level === 3) {
+    levelTime = 30;
+  }
+  if (userInfo.level === 4) {
+    levelTime = 35;
+  }
+  if (userInfo.level === 5) {
+    levelTime = 40;
+  }
+
   useEffect(() => {
     setQuestions(data[`level${userInfo.level}`]);
+    // console.log("in useEffect");
   }, [userInfo.level]);
 
-  const handleAnswer = (arg) => {
+  useEffect(() => {
+    const timer = setTimeout(handleAnswer, levelTime * 1000);
+    return () => clearTimeout(timer);
+  }, [questionIndex]);
+
+  function handleAnswer(arg) {
+    // console.log("Inside handle answer");
+    setTime(11);
     setUserInfo((currUserInfo) => {
       const updated = { ...currUserInfo };
       updated.totalQuestions++;
@@ -35,7 +68,7 @@ const QuestionsCard = ({ userInfo, setUserInfo }) => {
     } else {
       setShowScore(true);
     }
-  };
+  }
 
   if (showScore)
     return (
@@ -47,22 +80,25 @@ const QuestionsCard = ({ userInfo, setUserInfo }) => {
         setUserInfo={setUserInfo}
         levelScore={levelScore}
         setQuestions={setQuestions}
+        setTime={setTime}
       />
     );
 
   return (
-    <div>
+    <div className="column-container">
       <h2>{questions[questionIndex].question}</h2>
-      {questions[questionIndex].answerOptions.sort(() => Math.random() - 0.5).map((option) => {
-        return (
-          <button
-            key={option.answer}
-            onClick={() => handleAnswer(option.isCorrect)}
-          >
-            {option.answer}
-          </button>
-        );
-      })}
+      {questions[questionIndex].answerOptions
+        .sort(() => Math.random() - 0.5)
+        .map((option) => {
+          return (
+            <button className="answer"
+              key={option.answer}
+              onClick={() => handleAnswer(option.isCorrect)}
+            >
+              {option.answer}
+            </button>
+          );
+        })}
     </div>
   );
 };

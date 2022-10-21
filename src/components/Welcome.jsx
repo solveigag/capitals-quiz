@@ -8,13 +8,10 @@ const Welcome = ({ setUserInfo }) => {
   };
 
   return (
-    <section>
-      <h1>CapMaster</h1>
+    <section className="column-container">     
       <div>
-        <h2>Welcome to CapMaster!</h2>
-        <p>
-          Test your knowlege of capitals around the world and see what level you
-          can reach!
+        <h2></h2>
+        <p>Test your knowlege of capitals around the world and see if you can reach level 5!<br/>If you score less than 8 correct questions - you can't move on to the next level. Good luck!
         </p>
       </div>
       <button onClick={startQuiz}>Start Quiz</button>

@@ -1,7 +1,5 @@
 import "./App.css";
 import { useState } from "react";
-import ExpandWelcome from "./components/expandables/ExpandWelcome";
-import ExpandQuiz from "./components/expandables/ExpandQuiz";
 import Welcome from "./components/Welcome";
 import Quiz from "./components/Quiz";
 
@@ -15,14 +13,16 @@ function App() {
   });
 
   return (
-    <div>
-      <ExpandWelcome userInfo={userInfo}>
-        <Welcome setUserInfo={setUserInfo} />
-      </ExpandWelcome>
-      <ExpandQuiz userInfo={userInfo}>
+    
+    <div id="main-container">
+       <h1>World Capitals Quiz</h1>
+      {userInfo.quizStarted ? (
         <Quiz userInfo={userInfo} setUserInfo={setUserInfo} />
-      </ExpandQuiz>
+      ) : (
+        <Welcome setUserInfo={setUserInfo} />
+      )}
     </div>
+    
   );
 }
 

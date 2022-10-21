@@ -129,12 +129,12 @@ export const data = {
       ],
     },
     {
-      question: "5. What is the capital of Ireland?",
+      question: "5. What is the capital of China?",
       answerOptions: [
-        { answer: "Limerick", isCorrect: false },
-        { answer: "Belfast", isCorrect: false },
-        { answer: "Cork", isCorrect: false },
-        { answer: "Dublin", isCorrect: true },
+        { answer: "Wuhan", isCorrect: false },
+        { answer: "Xi An", isCorrect: false },
+        { answer: "Shanghai", isCorrect: false },
+        { answer: "Beijing", isCorrect: true },
       ],
     },
     {
@@ -307,7 +307,7 @@ export const data = {
       question: "4. What is the capital of Morocco?",
       answerOptions: [
         { answer: "Algiers", isCorrect: false },
-        { answer: "Marraksh", isCorrect: false },
+        { answer: "Marrakesh", isCorrect: false },
         { answer: "Casablanca", isCorrect: false },
         { answer: "Rabat", isCorrect: true },
       ],
