@@ -24,7 +24,7 @@ const Quiz = ({ userInfo, setUserInfo }) => {
       setTime(40);
     }
     // console.log(time, "useeffect triggered in quiz");
-  }, [time]);
+  }, [userInfo.level, time]);
 
   if (
     userInfo.quizStarted === true &&
