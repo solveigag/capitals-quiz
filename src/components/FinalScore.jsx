@@ -16,7 +16,7 @@ const FinalScore = ({ userInfo, setUserInfo }) => {
     image = scoreZero;
   }
 
-  if (userInfo.level === 1) {
+  if (userInfo.level === 1 && userInfo.totalScore > 0) {
     sentence = `You have completed level ${userInfo.level}. Try and explore the map more... So you can get better and move up a level!`;
     image = level1;
   }
