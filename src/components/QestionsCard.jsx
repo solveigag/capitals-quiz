@@ -41,6 +41,7 @@ const QuestionsCard = ({
   useEffect(() => {
     const timer = setTimeout(handleAnswer, levelTime * 1000);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line
   }, [questionIndex]);
 
   function handleAnswer(arg) {
