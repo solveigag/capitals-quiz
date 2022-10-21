@@ -22,7 +22,7 @@ p {
 body {
   background-image: url("./media/map.jpg");
  height: 100vh;
- max-height: 100vh;
+ overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
@@ -39,7 +39,7 @@ body {
 }
 
 .column-container {
-  max-height: 100vh;
+  margin: auto;
   font-weight: 600;
   padding-top: 10px;
   width: 80vw;
@@ -65,7 +65,7 @@ button {
   border-radius: 8px;
   box-sizing: border-box;
   color: #222222;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: inline-block;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
   font-size: 16px;
