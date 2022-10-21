@@ -22,15 +22,19 @@ p {
 body {
   background-image: url("./media/map.jpg");
  height: 100vh;
- overflow: hidden;
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
 }
 #main-container {
+  margin-top: auto;
   text-align: center;
-  margin: auto;
-  padding-top: 20%;
+  /* padding-top: 10%; */
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -78,9 +82,9 @@ button {
   text-align: center;
   text-decoration: none;
   /* touch-action: manipulation; */
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  /* transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
   user-select: none;
-  -webkit-user-select: none;
+  -webkit-user-select: none; */
   width: 150px;
 }
 
@@ -128,7 +132,7 @@ img {
     font-size: 48px;
   }
   #main-container{
-   padding-top: 13%;
+   /* padding-top: 13%; */
     width: 500px;
   }
   .column-container {
