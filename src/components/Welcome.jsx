@@ -10,7 +10,6 @@ const Welcome = ({ setUserInfo }) => {
   return (
     <section className="column-container">     
       <div>
-        <h2></h2>
         <p>Test your knowlege of capitals around the world and see if you can reach level 5!<br/>If you score less than 8 correct questions - you can't move on to the next level. Good luck!
         </p>
       </div>
