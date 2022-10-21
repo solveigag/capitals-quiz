@@ -8,7 +8,7 @@ const ScoreCard = ({
   setQuestions,
   setShowScore,
   setLevelScore,
-  setTime
+  setTime,
 }) => {
   const nextLevel = () => {
     if (userInfo.level !== 5) {
@@ -23,8 +23,8 @@ const ScoreCard = ({
       setShowScore(false);
       setQuestionIndex(0);
       setTime((currTime) => {
-        return currTime + 10
-      })
+        return currTime + 10;
+      });
     }
   };
 
@@ -38,7 +38,7 @@ const ScoreCard = ({
   };
 
   if (userInfo.level === 5 || levelScore < 8)
-    return ( 
+    return (
       <div>
         <p>Level: {userInfo.level}</p>
         <p>Score: {levelScore}/10</p>
@@ -49,12 +49,11 @@ const ScoreCard = ({
   return (
     <div className="column-container">
       <p>Level: {userInfo.level}</p>
-        <p>Score: {levelScore}/10</p>
-        <div className="row-container">
-      <button onClick={nextLevel}>Next Level</button>
-      <button onClick={endQuiz}>Finish</button>
-
-        </div>
+      <p>Score: {levelScore}/10</p>
+      <div className="row-container">
+        <button onClick={nextLevel}>Next Level</button>
+        <button onClick={endQuiz}>Finish</button>
+      </div>
     </div>
   );
 };

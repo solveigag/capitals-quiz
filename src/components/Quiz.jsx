@@ -23,7 +23,6 @@ const Quiz = ({ userInfo, setUserInfo }) => {
     if (userInfo.level === 5) {
       setTime(40);
     }
-    // console.log(time, "useeffect triggered in quiz");
   }, [userInfo.level, time]);
 
   if (
@@ -64,7 +63,7 @@ const Quiz = ({ userInfo, setUserInfo }) => {
   }
 
   if (userInfo.quizEnded === true) {
-    return <FinalScore userInfo={userInfo} setUserInfo={setUserInfo}/>;
+    return <FinalScore userInfo={userInfo} setUserInfo={setUserInfo} />;
   }
 };
 

@@ -21,24 +21,22 @@ p {
 
 body {
   background-image: url("./media/map.jpg");
- height: 100vh;
-
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
 }
 #main-container {
   margin-top: auto;
   text-align: center;
-  /* padding-top: 10%; */
   width: 80vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
 }
 
@@ -56,22 +54,21 @@ body {
 
 .row-container {
   display: flex;
-  
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-/* CSS */
 button {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #222222;
   border-radius: 8px;
   box-sizing: border-box;
   color: #222222;
-  /* cursor: pointer; */
+  cursor: pointer;
   display: inline-block;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -81,10 +78,6 @@ button {
   position: relative;
   text-align: center;
   text-decoration: none;
-  /* touch-action: manipulation; */
-  /* transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
-  user-select: none;
-  -webkit-user-select: none; */
   width: 150px;
 }
 
@@ -104,31 +97,25 @@ button {
   font-size: inherit;
 }
 
-
-
-
 img {
- margin-top: 10px;
+  margin-top: 10px;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   filter: grayscale(1);
 }
 
-
 @media only screen and (min-width: 800px) {
-
   body {
     background-size: cover;
-    background-position-y:80%;
-    background-position-x:center
+    background-position-y: 80%;
+    background-position-x: center;
   }
 
   h1 {
     font-size: 48px;
   }
-  #main-container{
-   /* padding-top: 13%; */
+  #main-container {
     width: 500px;
   }
   .column-container {
@@ -137,7 +124,6 @@ img {
 
   .answer:hover {
     box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-    transition: box-shadow .2s;
+    transition: box-shadow 0.2s;
   }
-  
 }

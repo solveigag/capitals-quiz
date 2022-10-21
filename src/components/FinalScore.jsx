@@ -31,12 +31,12 @@ const FinalScore = ({ userInfo, setUserInfo }) => {
   }
 
   if (userInfo.level === 4) {
-    sentence = `You have completed level ${userInfo.level}. Well done! You're knowledge is very good!`;
+    sentence = `You have completed level ${userInfo.level}. Well done! You're knowledge is very good! Hero level is in sight!`;
     image = level4;
   }
 
   if (userInfo.level === 5 && userInfo.totalScore < 50) {
-    sentence = `You have completed level ${userInfo.level}. Well done! Master level is insight for you!`;
+    sentence = `You have completed level ${userInfo.level}. Well done! You're knowlede is heroic and Royalty Status is closer than ever!`;
     image = level5;
   }
 
@@ -53,14 +53,17 @@ const FinalScore = ({ userInfo, setUserInfo }) => {
       <p>{sentence}</p>
       <img src={image} alt="decorative" />
       <button
-        onClick={()=> setUserInfo({
-          quizStarted: false,
-          quizEnded: false,
-          level: 1,
-          totalScore: 0,
-          totalQuestions: 0,
-        })}
-      >Try Again
+        onClick={() =>
+          setUserInfo({
+            quizStarted: false,
+            quizEnded: false,
+            level: 1,
+            totalScore: 0,
+            totalQuestions: 0,
+          })
+        }
+      >
+        Try Again
       </button>
     </div>
   );

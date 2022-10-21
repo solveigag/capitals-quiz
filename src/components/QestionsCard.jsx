@@ -35,7 +35,6 @@ const QuestionsCard = ({
 
   useEffect(() => {
     setQuestions(data[`level${userInfo.level}`]);
-    // console.log("in useEffect");
   }, [userInfo.level]);
 
   useEffect(() => {
@@ -45,7 +44,6 @@ const QuestionsCard = ({
   }, [questionIndex]);
 
   function handleAnswer(arg) {
-    // console.log("Inside handle answer");
     setTime(11);
     setUserInfo((currUserInfo) => {
       const updated = { ...currUserInfo };
@@ -92,7 +90,8 @@ const QuestionsCard = ({
         .sort(() => Math.random() - 0.5)
         .map((option) => {
           return (
-            <button className="answer"
+            <button
+              className="answer"
               key={option.answer}
               onClick={() => handleAnswer(option.isCorrect)}
             >
